@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c52lfs4h7gx5b"]
+[gd_scene load_steps=6 format=3 uid="uid://c52lfs4h7gx5b"]
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dnik6rm333f8" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://djyid1a4uf0t" path="res://scenes/tree.tscn" id="3_lnu2h"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lnu2h"]
+a = Vector2(2.70337, -21.7378)
+b = Vector2(2.70338, 22.0796)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lbhrr"]
+a = Vector2(-191, -1)
+b = Vector2(191, 1)
 
 [node name="Game" type="Node2D"]
 
@@ -9,4 +18,29 @@
 texture = ExtResource("1_uwrxv")
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(103, 69)
+position = Vector2(-6, 79)
+
+[node name="tree" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(24, 213)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Boundary" type="StaticBody2D" parent="Node2D"]
+
+[node name="wallRight" type="CollisionShape2D" parent="Node2D/Boundary"]
+position = Vector2(194, -2)
+scale = Vector2(-1.10972, 14.6289)
+shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="WallLeft" type="CollisionShape2D" parent="Node2D/Boundary"]
+position = Vector2(-191, 2)
+scale = Vector2(-1.10972, 14.6289)
+shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Boundary"]
+position = Vector2(0, -321)
+shape = SubResource("SegmentShape2D_lbhrr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Boundary"]
+position = Vector2(0, 317)
+shape = SubResource("SegmentShape2D_lbhrr")
