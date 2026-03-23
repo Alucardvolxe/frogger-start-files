@@ -132,7 +132,7 @@ limit_left = -192
 limit_top = -320
 limit_right = 192
 limit_bottom = 320
-position_smoothing_enabled = true
+position_smoothing_speed = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1382297043]
 sprite_frames = SubResource("SpriteFrames_oprun")
