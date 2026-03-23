@@ -10,4 +10,4 @@ func _on_detect_body_entered(body: Node2D) -> void:
 
 func _on_car_timer_timeout() -> void:
 	var car = car_scene.instantiate()
-	add_child(car)
+	$Objects.add_child(car)
