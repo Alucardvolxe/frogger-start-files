@@ -10,7 +10,7 @@
 [node name="Game" type="Node2D" unique_id=252436844]
 script = ExtResource("1_iywne")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=67680680]
+[node name="Background" type="Sprite2D" parent="." unique_id=67680680]
 texture = ExtResource("1_uwrxv")
 
 [node name="Player" parent="." unique_id=73248715 instance=ExtResource("2_yqjtg")]
@@ -19,29 +19,32 @@ position = Vector2(-6, 79)
 [node name="tree" parent="." unique_id=310307180 instance=ExtResource("3_lnu2h")]
 position = Vector2(24, 213)
 
-[node name="Boundary" parent="." unique_id=1923964713 instance=ExtResource("4_lbhrr")]
+[node name="Timer" type="Node" parent="." unique_id=346504345]
+
+[node name="CarTimer" type="Timer" parent="Timer" unique_id=317399197]
+autostart = true
+
+[node name="Boundaries" type="Node" parent="." unique_id=700508873]
+
+[node name="Boundary" parent="Boundaries" unique_id=1923964713 instance=ExtResource("4_lbhrr")]
 position = Vector2(202, -7)
 scale = Vector2(1, 33.96)
 
-[node name="Boundary2" parent="." unique_id=2013287565 instance=ExtResource("4_lbhrr")]
+[node name="Boundary2" parent="Boundaries" unique_id=2013287565 instance=ExtResource("4_lbhrr")]
 position = Vector2(-201, -7)
 scale = Vector2(1, 33.96)
 
-[node name="Boundary3" parent="." unique_id=609645611 instance=ExtResource("4_lbhrr")]
+[node name="Boundary3" parent="Boundaries" unique_id=609645611 instance=ExtResource("4_lbhrr")]
 position = Vector2(1, -330)
 scale = Vector2(20.640001, 1)
 
-[node name="Boundary4" parent="." unique_id=839875626 instance=ExtResource("4_lbhrr")]
+[node name="Boundary4" parent="Boundaries" unique_id=839875626 instance=ExtResource("4_lbhrr")]
 position = Vector2(1, 328)
 scale = Vector2(20.640001, 1)
 
-[node name="Timer" type="Timer" parent="." unique_id=317399197]
-wait_time = 2.0
-autostart = true
-
-[node name="detect" parent="." unique_id=982851410 instance=ExtResource("6_p57ef")]
+[node name="detect" parent="Boundaries" unique_id=982851410 instance=ExtResource("6_p57ef")]
 position = Vector2(1.0000005, -191.99998)
-scale = Vector2(21.81266, 5.83495)
+scale = Vector2(18.77266, 5.83495)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
+[connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="body_entered" from="Boundaries/detect" to="." method="_on_detect_body_entered"]
