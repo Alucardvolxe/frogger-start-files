@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://djyid1a4uf0t"]
+[gd_scene format=3 uid="uid://djyid1a4uf0t"]
 
 [ext_resource type="Texture2D" uid="uid://d0so81ys3820n" path="res://graphics/objects/tree1.png" id="1_avsvi"]
 
@@ -6,11 +6,12 @@
 radius = 3.0
 height = 22.0
 
-[node name="tree" type="StaticBody2D"]
+[node name="tree" type="StaticBody2D" unique_id=754796996]
+collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1401080038]
 texture = ExtResource("1_avsvi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257389668]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_vplca")

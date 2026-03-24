@@ -18,4 +18,6 @@ func _on_car_timer_timeout() -> void:
 	car.connect("body_entered", go_to_title)
 
 func go_to_title(body):
+	print(body)
+	
 	print("Player car collision")
