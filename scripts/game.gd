@@ -15,4 +15,7 @@ func _on_car_timer_timeout() -> void:
 	car.position=pos_marker.position
 	$Objects.add_child(car)
 
-	
+	car.connect("body_entered", go_to_title)
+
+func go_to_title(body):
+	print("Player car collision")
