@@ -9,5 +9,10 @@ func _on_detect_body_entered(body: Node2D) -> void:
 	print("Has entered")
 
 func _on_car_timer_timeout() -> void:
-	var car = car_scene.instantiate()
+	var car = car_scene.instantiate() as Area2D
+	var pos_marker = $CarStartPosition.get_children().pick_random() as Marker2D
+	
+	car.position=pos_marker.position
 	$Objects.add_child(car)
+
+	

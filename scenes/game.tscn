@@ -40,6 +40,35 @@ scale = Vector2(20.640001, 1)
 position = Vector2(1.0000005, -191.99998)
 scale = Vector2(18.77266, 5.83495)
 
+[node name="CarStartPosition" type="Node2D" parent="." unique_id=803201925]
+
+[node name="Marker2D" type="Marker2D" parent="CarStartPosition" unique_id=1983479432]
+position = Vector2(203, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="CarStartPosition" unique_id=356080607]
+position = Vector2(200, 115)
+
+[node name="Marker2D3" type="Marker2D" parent="CarStartPosition" unique_id=1359932438]
+position = Vector2(-200, 94)
+
+[node name="Marker2D4" type="Marker2D" parent="CarStartPosition" unique_id=412444992]
+position = Vector2(-200, 142)
+
+[node name="Marker2D5" type="Marker2D" parent="CarStartPosition" unique_id=1422770869]
+position = Vector2(203, 165)
+
+[node name="Marker2D6" type="Marker2D" parent="CarStartPosition" unique_id=463176898]
+position = Vector2(-200, -24)
+
+[node name="Marker2D7" type="Marker2D" parent="CarStartPosition" unique_id=451695854]
+position = Vector2(203, -52)
+
+[node name="Marker2D8" type="Marker2D" parent="CarStartPosition" unique_id=1476572216]
+position = Vector2(-200, -92)
+
+[node name="Marker2D9" type="Marker2D" parent="CarStartPosition" unique_id=1795796953]
+position = Vector2(202, -115)
+
 [node name="Objects" type="Node2D" parent="." unique_id=1902793539]
 
 [node name="Player" parent="Objects" unique_id=73248715 instance=ExtResource("2_yqjtg")]
@@ -47,36 +76,6 @@ position = Vector2(-4.7683716e-07, 95.99999)
 
 [node name="tree" parent="Objects" unique_id=310307180 instance=ExtResource("3_lnu2h")]
 position = Vector2(15, 210)
-
-[node name="CarStartPosition" type="Node2D" parent="." unique_id=803201925]
-position = Vector2(15, 210)
-
-[node name="Marker2D" type="Marker2D" parent="CarStartPosition" unique_id=67027063]
-position = Vector2(-212, -46)
-
-[node name="Marker2D2" type="Marker2D" parent="CarStartPosition" unique_id=1950405533]
-position = Vector2(-214, -97)
-
-[node name="Marker2D3" type="Marker2D" parent="CarStartPosition" unique_id=2141473748]
-position = Vector2(185, -67)
-
-[node name="Marker2D4" type="Marker2D" parent="CarStartPosition" unique_id=892502892]
-position = Vector2(186, -117)
-
-[node name="Marker2D5" type="Marker2D" parent="CarStartPosition" unique_id=2144221782]
-position = Vector2(185, -207)
-
-[node name="Marker2D6" type="Marker2D" parent="CarStartPosition" unique_id=889023254]
-position = Vector2(186, -262)
-
-[node name="Marker2D7" type="Marker2D" parent="CarStartPosition" unique_id=265036801]
-position = Vector2(-217, -232)
-
-[node name="Marker2D8" type="Marker2D" parent="CarStartPosition" unique_id=228513439]
-position = Vector2(-217, -299)
-
-[node name="Marker2D9" type="Marker2D" parent="CarStartPosition" unique_id=1285268498]
-position = Vector2(185, -326)
 
 [connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
 [connection signal="body_entered" from="Boundaries/detect" to="." method="_on_detect_body_entered"]
