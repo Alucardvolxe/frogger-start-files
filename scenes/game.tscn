@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://djyid1a4uf0t" path="res://scenes/tree.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://0jqr3rmks0vi" path="res://scenes/boundary.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bp4naa367qyfo" path="res://scenes/detect.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://b6nfei0fbxr4d" path="res://scenes/static_car.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://cyoh6p382lg1n" path="res://scenes/static_car_green.tscn" id="8_0tnpc"]
 
 [node name="Game" type="Node2D" unique_id=252436844]
 script = ExtResource("1_iywne")
@@ -16,6 +18,7 @@ texture = ExtResource("1_uwrxv")
 [node name="Timer" type="Node" parent="." unique_id=346504345]
 
 [node name="CarTimer" type="Timer" parent="Timer" unique_id=317399197]
+wait_time = 0.15
 autostart = true
 
 [node name="Boundaries" type="Node" parent="." unique_id=700508873]
@@ -73,10 +76,29 @@ position = Vector2(202, -115)
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=73248715 instance=ExtResource("2_yqjtg")]
+y_sort_enabled = true
 position = Vector2(-4.7683716e-07, 95.99999)
 
 [node name="tree" parent="Objects" unique_id=310307180 instance=ExtResource("3_lnu2h")]
 position = Vector2(15, 210)
+
+[node name="tree2" parent="Objects" unique_id=754796996 instance=ExtResource("3_lnu2h")]
+position = Vector2(84, 218)
+
+[node name="tree3" parent="Objects" unique_id=627949585 instance=ExtResource("3_lnu2h")]
+position = Vector2(-34, 212)
+
+[node name="Static car" parent="." unique_id=1801137451 instance=ExtResource("7_gee14")]
+y_sort_enabled = true
+position = Vector2(-73, 61)
+
+[node name="Static car2" parent="." unique_id=221048247 instance=ExtResource("7_gee14")]
+y_sort_enabled = true
+position = Vector2(-90, 60)
+
+[node name="StaticCarGreen" parent="." unique_id=600895017 instance=ExtResource("8_0tnpc")]
+y_sort_enabled = true
+position = Vector2(141, 63)
 
 [connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
 [connection signal="body_entered" from="Boundaries/detect" to="." method="_on_detect_body_entered"]
