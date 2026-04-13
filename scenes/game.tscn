@@ -77,7 +77,7 @@ y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=73248715 instance=ExtResource("2_yqjtg")]
 y_sort_enabled = true
-position = Vector2(-4.7683716e-07, 95.99999)
+position = Vector2(-70, 180)
 
 [node name="tree" parent="Objects" unique_id=310307180 instance=ExtResource("3_lnu2h")]
 position = Vector2(15, 210)
